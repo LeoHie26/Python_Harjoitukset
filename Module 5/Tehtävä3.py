@@ -9,8 +9,8 @@ else:
         if number % i == 0:
             primenumber = False
             break
-if primenumber:
-    print(f"{number} is a prime number.")
+    if primenumber:
+        print(f"{number} is a prime number.")
 
-else:
-    print(f"{number} is not a prime number.")
+    else:
+        print(f"{number} is not a prime number.")
