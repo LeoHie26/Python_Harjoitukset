@@ -16,7 +16,7 @@ while True:
 if numbers:
     numbers.sort(reverse=True)
     print("The greatest numbers in descending order: ")
-    for number in numbers: # tässä jotain flaguu, ei skulaa oikein
+    for number in numbers[:5]: # jos haluaa rajata numero määrää niin hakasulut ja :numero
         print(number)
 
 else:
