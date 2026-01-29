@@ -1,18 +1,22 @@
-names = set()
+def check_name(name):
+    if name in names:
+        print("Existing name.")
 
-user_input = input("Enter name: ")
-
-
-def check_name(names):
-
-
-    if user_input not in names:
-        print("Name is new")
-        names.add(name)
 
     else:
-        print("Name exist")
+        names.add(name)
+        print("New name.")
 
+names = set()
 
+while True:
 
-print(names)
+    user_input = input("Enter name to the list: ")
+
+    if user_input == "":
+        break
+
+    check_name(user_input)
+
+for name in names:
+    print(name)
