@@ -5,7 +5,7 @@ while True:
     user_input = input("1. Enter a new airport\n2. Fetch airport information\n3. Quit\nPlease choose an option (1-3): ")
 
     if user_input == "1":
-        icao = input("Enter the ICAO code: ").strip().upper()
+        icao = input("Enter the ICAO code: ").strip().upper().lower()
         if icao == "":
             print("ICAO code can not be empty.")
             continue
