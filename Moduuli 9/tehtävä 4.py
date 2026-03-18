@@ -1,4 +1,6 @@
 import random
+
+
 class Car:
     def __init__(self, license_plate, maximum_speed, current_speed=0, travelled_distance=0):
         self.license_plate = license_plate
@@ -21,18 +23,16 @@ class Car:
             self.travelled_distance += self.current_speed * time
 
 
-
-
 def race(cars):
-    car_one = Car(cars[0], cars[1])
-    car_two = Car(cars[2], cars[3])
-    car_three = Car(cars[4], cars[5])
-    dist = 0
+    car_one = cars[0]
+    car_two = cars[1]
+    car_three = cars[2]
 
+    dist = 0
     while dist <= 10000:
-        car_one.accelerate(random.randint(-10,15))
-        car_two.accelerate(random.randint(-10,15))
-        car_three.accelerate(random.randint(-10,15))
+        car_one.accelerate(random.randint(-10, 15))
+        car_two.accelerate(random.randint(-10, 15))
+        car_three.accelerate(random.randint(-10, 15))
 
         car_one.drive(1)
         car_two.drive(1)
@@ -47,9 +47,9 @@ def race(cars):
         elif car_three.travelled_distance > car_one.travelled_distance and car_three.travelled_distance > car_two.travelled_distance:
             dist = car_three.travelled_distance
 
-    print(f"Car: {car_one.license_plate}\nTravelled: {car_one.travelled_distance}km\n-----------------\n"
-          f"Car: {car_two.license_plate}\nTravelled: {car_two.travelled_distance}km\n-----------------\n"
-          f"Car: {car_three.license_plate}\nTravelled: {car_three.travelled_distance}km\n-----------------\n")
+    return cars
 
-list_of_cars = ["ABC-123", 140, "CBA-321", 140, "BCA-213", 140]
-race(list_of_cars)
+
+list_of_cars = []
+for car in range(10):
+    list_of_cars.append(Car("abc-123", 140))
